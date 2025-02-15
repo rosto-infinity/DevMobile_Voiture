@@ -1,20 +1,36 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Enregistrer un Véhicule</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <form (ngSubmit)="validerForm()">
+    <ion-item>
+      <ion-label position="floating">Immatriculation</ion-label>
+      <ion-input type="text" [(ngModel)]="voiture.immatriculation" name="immatriculation" required></ion-input>
+    </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-item>
+      <ion-label position="floating">Nom du Propriétaire</ion-label>
+      <ion-input type="text" [(ngModel)]="voiture.proprietaire" name="proprietaire" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Modèle du Véhicule</ion-label>
+      <ion-input type="text" [(ngModel)]="voiture.modele" name="modele" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Date de Validité</ion-label>
+      <ion-datetime display-format="YYYY-MM-DD" [(ngModel)]="voiture.dateValidite" name="dateValidite"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Téléphone</ion-label>
+      <ion-input type="tel" [(ngModel)]="voiture.telephone" name="telephone" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit">Enregistrer</ion-button>
+  </form>
 </ion-content>
