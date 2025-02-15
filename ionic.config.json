@@ -1,0 +1,7 @@
+{
+  "name": "DevMobile_Voiture",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
